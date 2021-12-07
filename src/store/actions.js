@@ -1,4 +1,4 @@
-import { ADD_COUNTER, ADD_TO_CART, CHANGE_CHECKED } from "./mutation-type"
+import { ADD_COUNTER, ADD_TO_CART, CHANGE_CHECKED, INIT } from "./mutation-type"
 
 export default {
   addCart({ state, commit }, payload) {
@@ -17,5 +17,9 @@ export default {
   },
   changeChecked({ state, commit }, payload) {
     commit(CHANGE_CHECKED, payload)
+  },
+  init({state,commit}){
+    let cartList = JSON.parse(sessionStorage.getItem("cartList")) ? JSON.parse(sessionStorage.getItem("cartList")) : []
+    commit(INIT, cartList)
   }
 }
