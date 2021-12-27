@@ -19,7 +19,7 @@ export default {
     commit(CHANGE_CHECKED, payload)
   },
   init({state,commit}){
-    let cartList = JSON.parse(sessionStorage.getItem("cartList")) ? JSON.parse(sessionStorage.getItem("cartList")) : []
+    let cartList = JSON.parse(sessionStorage.getItem("cartList"))
     commit(INIT, cartList)
   }
 }

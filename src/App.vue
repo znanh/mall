@@ -25,6 +25,12 @@ export default {
     Icon,
     SvgIcon,
   },
+  mounted(){
+    sessionStorage.getItem("cartList") ? this.$store.dispatch('init') : ''
+    window.addEventListener("beforeunload",()=>{
+        sessionStorage.setItem('cartList',JSON.stringify(this.$store.state.cartList))
+    })
+  }
 };
 </script>
 <style>

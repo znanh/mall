@@ -28,9 +28,6 @@ export default {
   computed: {
     ...mapGetters(["cartLength"]),
   },
-  mounted(){
-    this.$store.dispatch('init')
-  },
   mixins: [beforeRouteLeaveMixin],
 };
 </script>
